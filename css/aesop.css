@@ -1,0 +1,2312 @@
+@charset "utf-8";
+
+/* animation */
+
+/* .visual ,
+.main ,
+.footer,
+.brandLeft {
+    transform:translate(0,0);
+    opacity:1;
+    transition:all 1.5s;
+
+    background:#666;
+	opacity:1;
+	-webkit-transform:translate(0, -50px);
+	-ms-transform:translate(0, -50px);
+	transform:translate(0, -50px);
+} */
+
+
+
+/* header */
+.navWrap {
+    position: fixed; top: 0; left: 0;
+    z-index: 1; width: 100%; height: 70px;
+    background: #fffef3;
+    box-shadow: 0px 1px 5px #bbb;
+}
+.logo {
+    position: absolute; left: 50%; top: 21px; 
+    transform: translateX(-50%); width: 100px;
+    height: 50px; 
+}
+h1 img { width: 100%;}
+
+    /* 메뉴 */
+.navBtn {
+    position: relative; top: 0; left: 5.334%; 
+    width: 24px; height: 20px;
+    transition: .3s ease-in-out;
+    float: left;
+}
+.navBtn span {
+    position: relative;
+    width: 100%;
+    display: block; height: 2px; background: #000; 
+    transition: 0.2s;
+}
+
+.navBtn span:nth-child(1) {
+    top: 0;
+}
+.navBtn span:nth-child(2) {
+    top: 10px;
+}
+.navBtn.open span:nth-child(1){
+    transform: rotate(45deg);
+    top: 5px;
+}
+.navBtn.open span:nth-child(2) {
+    transform: rotate(-45deg);
+    top: 3px;
+}
+/* .navBtn:after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: #000;
+} */
+#menu .tablet_cartLogin  {
+   display: none;
+}
+
+
+
+
+/* gnb.open */
+
+.gnb {
+    display: block;
+}
+.navWrap .gnb {
+    background: #fffef3;
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+    height: 100%;
+    position: fixed;
+    top: 70px;
+    transition: 0.3s;
+}
+.gnb .searchWrap .searchIcon { /* 돋보기 아이콘 */
+    background: url(../images/premium-icon-magnifier-2319177.png) no-repeat center/ contain;
+    width: 31px;
+    height: 29px;
+    display: block;
+    margin: 40px 0 40px 8%;
+    cursor: pointer;
+}
+.gnb ul>li {
+    opacity: 0;
+}
+.gnb ul>li>a { /* 브랜드 ~ 카트 */
+    color: #333333;
+    font-size: 22px;
+    padding: 0 0 40px 8%;
+    display: block;
+    /* transition: all 0.3s ease; */
+    transition: opacity 0.2s ease;
+}
+.gnb ul>li>a:hover {
+    color: #6c6a5f;
+    transition: 0.3s ease;
+}
+.gnb ul>li:nth-child(3)>a { /* 스토어 */
+    margin-bottom: 20px;
+    display: block;
+}
+@keyframes fadeInLeft {
+    0% { opacity: 0; transform: translateX(-25%);}
+    100% { opacity: 1; transform: translateX(0);}
+}
+.navWrap .gnb.visible {
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+}
+.gnb.visible ul>li {
+    opacity: 1;
+    visibility: visible;
+    animation: fadeInLeft 0.3s ease backwards;
+}
+.gnb.visible ul>li:nth-child(1) {
+    animation-delay: 0.23s;
+}
+.gnb.visible ul>li:nth-child(2) {
+    animation-delay: 0.28s;
+}
+.gnb.visible ul>li:nth-child(3) {
+    animation-delay: 0.33s;
+}
+.gnb.visible ul>li:nth-child(4) {
+    animation-delay: 2.63s;
+}
+.gnb.visible ul>li:nth-child(5) {
+    animation-delay: 2.68s;
+}
+
+
+
+    /* 비쥬얼 */
+.visual {
+    margin-top: 70px; width: 100%; 
+}
+.visual video {
+    width: 100%;
+}
+.visual .mainVisual .bg { /* 메인비주얼 bg */
+    background: url(../images/aesop_mobile_mainVisual_bg.jpg)no-repeat center/cover;
+    width: 100%; 
+    /* height: 271px; */
+    height: 0;
+    padding-bottom: 72.267%;
+    margin-top: -16px;
+    background-position: center bottom;
+
+    /* opacity: 0; */
+}
+.visual .mainVisual .bg.animate {
+    /* opacity: 1; */
+    transform: translateY(15px);
+    animation: none;
+}
+.title .mainTitle {  /*시간의 가치*/
+    font-size: 16px; font-weight: 300;
+    color: #fffef3;
+    padding: 23px 0 0px 8%;
+    display: block;
+
+    opacity: 0;
+}
+
+.title .maintitle { /*건강한 피부는 서두르지 않습니다*/
+    font-size: 35px; line-height: 40px;
+    color: #fffef3; font-weight: 400;
+    margin-left: 8%;
+
+    opacity: 0;
+}
+.animate {
+    animation: fadeIn 1s forwards ease-in;
+    transition: 1s ease-in-out;
+}
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+.title .mainTitle.animate { /* 시간의가치 */
+    transform: translateY(15px);
+    opacity: 1;
+}
+.title .maintitle.animate { /* 건강한 피부는 ~ */
+    transform: translateY(30px);
+    opacity: 1;
+}
+
+
+.title .maintitle .mobileText {
+    display: block;
+}
+.title p {
+    display: none;
+}
+.title .pc_mainVisualText {
+    display: none;
+}
+.bestInner li p .bestText { /* 줄바꿈 */
+    display: block;
+}
+
+
+
+
+/* main */
+/* 베스트 */
+#best {
+    background: #fffef3; 
+    width: 100%; height: 568px;
+
+    opacity: 0;
+}
+#best.animate {
+    opacity: 1;
+    transform: translateY(15px);
+}
+.bestInner h3 { /*BEST*/
+    color: #333333;
+    font-family: 'suisse_intlregular';
+    font-size: 30px; text-align: center;
+    padding: 25px 0 30px 0;
+    font-weight: 400;
+    opacity: 0;
+}
+.bestInner h3.animate {
+    opacity: 0;
+    transform: translateY(15px);
+}
+.bestInner .balmBox {
+    width:315px;height: 314px;
+    display: block; 
+    margin:0 auto;
+    /* background: pink; */
+}
+.bestInner .balmBox img { /*핸드밤 이미지*/
+    width: 265px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+.bestInner .slide div:first-child h4 { /*레저렉션 아로마틱 핸드 밤*/
+    color: #333333;
+    font-size: 18px; font-weight: 500;
+    margin: 20px 0 10px 0;
+    text-align: center;
+}
+.bestInner .slide div:first-child p { /*핸드밤 상세*/
+    color: #333333;
+    font-weight: 300; font-size: 15px;
+    line-height: 20px;text-align: center;
+}
+.bestInner .slide div:first-child p .bestText { /*줄바꿈*/
+    display: block;
+}
+.bestInner .slide div:nth-child(2),
+.bestInner .slide div:nth-child(3),
+.bestInner .slide div:nth-child(4) {
+    display: none;
+}
+
+/* 아로마틱 핸드 워시 */
+.bestInner .slide div:nth-child(2) {
+    display: block;
+}
+.bestInner .washBox {
+    width:315px; height: 314px;
+    display: block; 
+    /* background: skyblue; */
+    margin: 0 auto;
+}
+.bestInner .washBox img { /* 핸드워시 이미지 */
+    width: 253px;
+    /* height: 322px; */
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+.bestInner .slide div:nth-child(2) h4 { /* 레저렉션 아로마틱 핸드 워시 */
+    color: #333333;
+    font-size: 18px; font-weight: 500;
+    text-align: center;
+    margin: 20px 0 10px 0;
+}
+.bestInner .slide div:nth-child(2) p { /* 핸드워시 상세 */
+    color: #333333;
+    font-weight: 300; font-size: 15px;
+    line-height: 20px;text-align: center;
+}
+
+/* 테싯 오 드 퍼퓸 */
+.bestInner .slide div:nth-child(3) {
+    display: block;
+}
+.bestInner .perfumeBox {
+    width:315px; height: 314px;
+    display: block; 
+    /* background: pink; */
+    margin: 0 auto;
+}
+.bestInner .perfumeBox img { /* 퍼퓸 이미지 */
+    width: 320px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+.bestInner .slide div:nth-child(3) h4 { /* 테싯 오 드 퍼퓸 */
+    color: #333333;
+    font-size: 18px; font-weight: 500;
+    text-align: center;
+    margin: 20px 0 10px 0;
+}
+.bestInner .slide div:nth-child(3) p { /* 퍼퓸 상세 */
+    color: #333333;
+    font-weight: 300; font-size: 15px;
+    line-height: 20px;text-align: center;
+}
+
+/* 올루스 아로마틱 룸 스프레이 */
+.bestInner .slide div:nth-child(4) {
+    display: block;
+}
+.bestInner .roomBox {
+    width:315px; height: 314px;
+    display: block; 
+    /* background: pink; */
+    margin: 0 auto;
+}
+.bestInner .roomBox img { /*스프레이 이미지*/
+    width: 271px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+.bestInner .slide div:nth-child(3) h4 { /* 올루스 아로마틱 룸 스프레이 */
+    color: #333333;
+    font-size: 18px; font-weight: 500;
+    text-align: center;
+    margin: 20px 0 10px 0;
+}
+.bestInner .slide div:nth-child(3) p { /* 스프레이 상세 */
+    color: #333333;
+    font-weight: 300; font-size: 15px;
+    line-height: 20px;text-align: center;
+}
+
+#best .slick-dots{ /* 슬라이드바 */
+    display: block;
+    overflow: hidden;
+    min-width: 59.47%;
+    width: 59.47%;
+    height: 2px;
+    margin: 0 auto;
+    background-color: #e1e1e1;
+    background-image: linear-gradient(to right,black,black);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    transition: background-size 1s ease;
+
+    margin-top: 40px;
+}
+#best .slick-dots .slick-active {
+    display: block;
+    width: 25%;
+    height: 2px;
+    background-color: #000;
+}
+#best .slick-dots li {
+    float: left;
+    width: 25%;
+    cursor: pointer;
+}
+
+
+/* 브랜드스토리 */
+
+.brandInner .brandLeft { /* 브랜드스토리 bg */
+    background: url(../images/aesop_brandstory_bg.jpg) no-repeat center/cover; 
+    width: 100%; 
+    /* height: 375px;  */
+    height: 0;
+    padding-bottom: 100%;
+    padding-top: 0;
+    /* background-position: center bottom; */
+    opacity: 0;
+}
+.brandInner .brandLeft.animate {
+    opacity: 1;
+    transform: translateY(15px);
+}
+.brandInner .title h3 { /*BRAND STORY*/
+    font-family: 'suisse_intlregular';
+    color: #fffef3;
+    font-size: 26px; font-weight: 400;
+    margin: 0 0 15px 8%;
+    padding-top: 25px;
+    opacity: 0;
+}
+.brandInner .title h3.animate {
+    opacity: 1;
+    transform: translateY(15px);
+}
+.brandInner .none { /*이솝은 ~ 제공합니다*/
+    font-weight: 400; color: #fffef3;
+    font-size: 17px; line-height: 26px;
+    margin: 0 0 60px 8%;
+    opacity: 0;
+}
+.brandInner .none.animate {
+    opacity: 1;
+    transform: translateY(15px);
+}
+.brandInner .pc_brandstoryText {
+    display: none;
+}
+.brandInner p .mobileText {
+    display: block;
+}
+.brandInner a { /* 브랜드 자세히보기 */
+    border: 1px solid #fffef3;
+    /* width: 168px; height: 52px; */
+    color: #fffef3;
+    margin-left: 8%;
+    display: block; 
+    transition: all 0.4s ease;
+    width: 0;
+    height: 0; opacity: 0;
+}
+.brandInner a.animate {
+    width: 168px; height: 52px; opacity: 1;
+    transition: all 0.8s ease-in;
+}
+.brandInner a:hover {
+    border: 1px solid #6c6a5f;
+    background-color: #ebeae0;
+    color: #6c6a5f;
+    transition: all 0.4s ease;
+}
+.brandInner .brandBox span { /* BRAND */
+    font-family: 'suisse_intllight';
+    font-size: 14px; 
+    /* margin: 20px 60px; */
+    text-align: center;
+    line-height: 50px;
+    display: block;
+    opacity: 0;
+}
+.brandInner .brandBox span:hover {
+    transition: all 0.1s ease;
+    color: #6c6a5f;
+}
+.brandInner .brandBox span.animate {
+    opacity: 1;
+    transition: all 0.8s ease-in;
+}
+
+.brandInner .brandVideo video {
+    width: 100%;
+    opacity: 0;
+    /* margin-top: -15px; */
+}
+.brandInner .brandVideo video.animate {
+    opacity: 1;
+    transform: translateY(15px);
+}
+
+
+/* 기프트 가이드 */
+.giftInner {
+    padding-top: 40px;
+    background-color: #fffef3;
+}
+.giftInner .giftRight {
+    background: url(../images/aesop_giftguide_bg.jpg) no-repeat center/cover;
+    width: 100%; 
+    /* height: 375px;  */
+    height: 0;
+    padding-bottom: 100%;
+    padding-top: 0;
+    /* background-position: center bottom; */
+    /* margin-top: 40px; */
+    opacity: 0;
+}
+.giftInner .giftRight.animate {
+    opacity: 1;
+    transform: translateY(15px);
+}
+.giftRight .title h3 { /* GIFT GUIDE */
+    font-family: 'suisse_intlregular';
+    color: #fffef3;
+    font-size: 26px; font-weight: 400;
+    margin: 0 8% 30px 0;
+    text-align: right;
+    padding-top: 25px;
+    opacity: 0;
+}
+.giftRight .title h3.animate {
+    opacity: 1;
+    transform: translateY(15px);
+}
+.giftRight p { /* 다양한 ~ 기프트 제안 */
+    font-weight: 400; color: #fffef3;
+    font-size: 17px; text-align: right;
+    margin: 0 8% 60px 30px;
+    opacity: 0;
+}
+.giftRight p.animate {
+    opacity: 1;
+    transform: translateY(15px);
+}
+.giftInner a { /* 기프트 자세히보기 */
+    border: 1px solid #fffef3;
+    /* width: 168px; height: 52px; */
+    color: #fffef3;
+    margin-right: 8%;
+    display: block; 
+    float: right;
+    transition: all 0.4s ease;
+    width: 0;
+    height: 0; opacity: 0;
+}
+.giftInner a.animate {
+    width: 168px; height: 52px; opacity: 1;
+    transition: all 0.8s ease-in;
+}
+.giftInner a:hover {
+    border: 1px solid #6c6a5f;
+    background-color: #ebeae0;
+    color: #6c6a5f;
+    transition: all 0.4s ease;
+}
+.giftInner .giftBox span { /* GIFT */
+    font-family: 'suisse_intllight';
+    font-size: 14px; 
+    /* margin: 20px 60px; */
+    text-align: center;
+    line-height: 50px;
+    display: block;
+    opacity: 0;
+}
+.giftInner .giftBox span.animate {
+    opacity: 1;
+}
+.giftInner .giftBox span:hover {
+    transition: all 0.1s ease;
+}
+.giftInner .giftVideo video {
+    width: 100%;
+    opacity: 0;
+ }
+ .giftInner .giftVideo video.animate {
+    opacity: 1;
+    transform: translateY(15px);
+ }
+
+ .giftInner .tablet_giftVideo video   {
+    display: none;
+ }
+
+/* 스토어 로케이터 */
+.storeInner .storeLeft { /* 스토어 로케이터 bg */
+    background: url(../images/aesop_mobile_storelocator_bg.jpg) no-repeat center/cover; 
+    width: 100%; 
+    /* height: 375px;  */
+    height: 0;
+    padding-bottom: 100%;
+    padding-top: 0;
+    /* background-position: center bottom; */
+    margin-top: -1px;
+    opacity: 0;
+}
+.storeInner .storeLeft.animate {
+    opacity: 1;
+    transform: translateY(15px);
+}
+.storeInner .title h3 { /*STORE LOCATOR*/
+    font-family: 'suisse_intlregular';
+    color: #fffef3;
+    font-size: 26px; font-weight: 400;
+    margin: 0 0 30px 8%;
+    padding-top: 25px;
+    opacity: 0;
+}
+.storeInner .title h3.animate {
+    opacity: 1;
+    transform: translateY(15px);
+}
+.storeInner .none { /*매장에서는 ~ 제공해드립니다*/
+    font-weight: 400; color: #fffef3;
+    font-size: 17px; line-height: 26px;
+    margin: 0 0 60px 8%;
+    opacity: 0;
+}
+.storeInner .none.animate {
+    opacity: 1;
+    transform: translateY(15px);
+}
+.storeInner p .mobileText {
+    display: block;
+}
+.storeInner .pcText {
+    display: none;
+}
+.storeInner a { /* 스토어 자세히보기 */
+    border: 1px solid #fffef3;
+    /* width: 168px; height: 52px; */
+    color: #fffef3;
+    margin-left: 8%;
+    display: block; 
+    transition: all 0.4s ease;
+    width: 0; height: 0; opacity: 0;
+}
+.storeInner a.animate {
+    width: 168px; height: 52px; opacity: 1;
+    transition: all 0.8s ease-in;
+}
+.storeInner a:hover {
+    border: 1px solid #6c6a5f;
+    background-color: #ebeae0;
+    color: #6c6a5f;
+    transition: all 0.4s ease;
+}
+.storeInner .storeBox span { /* STORE */
+    font-family: 'suisse_intllight';
+    font-size: 14px; 
+    /* margin: 20px 60px; */
+    text-align: center;
+    line-height: 50px;
+    display: block;
+    opacity: 0;
+}
+.storeInner .storeBox span:hover {
+    transition: all 0.1s ease;
+}
+.storeInner .storeBox span.animate {
+    opacity: 1;
+    transition: all 0.4s ease-in;
+}
+.storeInner .storeVideo video {
+    width: 100%;
+    opacity: 0;
+}
+.storeInner .storeVideo video.animate {
+    opacity: 1;
+    transform: translateY(15px);
+}
+
+.storeInner {
+    padding-top: 40px;
+    background-color: #fffef3;
+}
+
+/* 격언 */
+#wisely .wiselyInner {
+    padding: 20px 0 95px;
+    background-color: #fffef3;
+    width: 100%;
+    opacity: 0;
+}
+#wisely .wiselyInner.animate {
+    opacity: 1;
+    transform: translateY(15px);
+}
+.wiselyInner h3 { /* wisely ~ fast */
+    font-family: 'suisse_intlregular';
+    font-weight: 400;
+    color: #333333;
+    text-align: center;
+    font-size: 26px; line-height: 31px;
+    padding-top: 85px;
+    opacity: 0;
+}
+.wiselyInner h3.animate {
+    opacity: 1;
+    transform: translateY(15px);
+}
+.wiselyInner h3 .mobileText {
+    display: block;
+}
+.wiselyInner p { /* william shakespeare */
+    font-family: 'suisse_intlregular';
+    font-weight: 400;
+    color: #333333;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 19px;
+    opacity: 0;
+}
+.wiselyInner p.animate {
+    opacity: 1;
+    transform: translateY(15px);
+}
+
+
+/* footer */
+.footer {
+    width: 100%;
+    background-color: #333333;
+    padding-bottom: 40px;
+    opacity: 0;
+}
+.footer.animate {
+    opacity: 1;
+    transform: translateY(15px);
+}
+.footer .footerInner {
+    font-family: 'suisse_intlregular';
+    width: 90%;
+    /* display: flex; justify-content: space-around; flex-wrap: nowrap; */
+    margin: 0 auto;
+    color: #fffef3;
+    font-size: 14px;
+}
+.footerInner a {
+    color: #d4c9be;
+    font-size: 12px; 
+    line-height: 24px;
+    display: block;
+    transition: all 0.2s ease;
+    opacity: 0;
+}
+.footerInner a.animate {
+    opacity: 1;
+    transform: translateY(15px);
+}
+.footerInner a:hover {
+    color: #fffef3;
+    transition: all 0.2s ease;
+}
+.footerInner .socialWrap a {
+    font-family: 'suisse_intlregular';
+}
+.footerInner h2 {
+    font-family: 'suisse_intlregular';
+    font-size: 14px;
+    padding-bottom: 20px;
+    opacity: 0;
+    margin-top: -15px;
+}
+.footerInner h2.animate {
+    opacity: 1;
+    transform: translateY(15px);
+}
+.footerInner .mobileFooter {
+    text-align: center;
+    padding-top: 40px;
+
+}
+.footerInner .aesopWrap {
+    float: left;
+    width: 33.333%;
+}
+.footerInner .socialWrap {
+    float: left;
+    width: 33.333%;
+}
+.footerInner .orderWrap {
+    float: left;
+    width: 33.333%;
+}
+.footerInner .markWrap { /* 이솝 마크 */
+    text-align: center;
+    display: block;
+    margin-top: 25px;
+    opacity: 1;
+}
+.footerInner .markWrap.animate {
+    opacity: 1;
+    transform: translateY(15px);
+}
+
+
+
+
+
+/* tablet 768 */
+@media screen and (min-width: 768px){
+    
+
+
+    /* header */
+
+    /* 메뉴 */
+    .navWrap {
+        height: 76px;
+    }
+    .navWrap .logo {
+        width: 110px;
+        height: 56px;
+    }
+    .navBtn {
+        width: 30px;
+        top: 5px;
+        padding-bottom: 10px;
+    }
+    /* .navBtn:after {
+        content: "";
+        display: block;
+        height: 2px;
+        background: #000;
+    } */
+
+    #menu .tablet_cartLogin {
+        display: block;
+        float: right;
+        margin-top: 5px;
+        margin-left: 2.604%;
+        margin-right: 5.213%;
+    }
+    #menu .tablet_cartLogin li:first-child {
+        display: none;
+        width: 20px; height: 20px;
+    }
+    #menu .tablet_cartLogin a { /* 카트 로그인 */
+        text-align: right;
+        font-size: 20px;
+        font-weight: 300;
+        display: block;
+        color: #333333;
+    }
+    #menu .tablet_cartLogin a:hover {
+        color: #6c6a5f;
+    }
+     #menu .tablet_cartLogin li:last-child a { 
+        /* padding: 0 5.2083% 0 2.604167%; 
+        margin-top: -20px; */
+        padding: 0;
+        margin-top: 0;
+    }
+    /* #menu .tablet_cartLogin li:first-child a { 
+        margin-top: 29px; 
+        display: none;
+
+    }  */
+    
+    #menu .tablet_cartLogin li {
+        float: left;
+        margin-left: 20px;
+        /* width: 20px; height: 20px; */
+    }
+
+
+
+
+/* gnb.open */
+
+.gnb {
+    display: block;
+}
+.navWrap .gnb {
+    top: 76px;
+    width: 36.328%;
+}
+.gnb .searchWrap .searchIcon { /* 돋보기 아이콘 */
+    width: 30px;
+    height: 29px;
+    margin: 50px 0 50px 8%;
+}
+.gnb ul>li>a { /* 브랜드 ~ 카트 */
+    font-size: 24px;
+    padding: 0 0 50px 8%;
+}
+.gnb ul>li:nth-child(3)>a { /* 스토어 */
+    margin-bottom: 30px;
+    display: block;
+}
+.gnb .cartLogin {
+    display: none;
+}
+
+
+
+    /* 비쥬얼 */
+    .visual .mainVisual .bg { /* 메인비주얼 bg */
+        background: url(../images/aesop_tablet_mainvisual_bg.jpg)no-repeat center/cover;
+        width: 100%; 
+        /* height: 271px; */
+        /* height: 0; */
+        padding-bottom: 56.641%;
+        /* margin-top: -1px; */
+        /* background-position: center bottom; */
+    }
+    .title .mainTitle {  /*시간의 가치*/
+        font-size: 22px; font-weight: 300;
+        color: #fffef3;
+        padding: 48px 0 4px 6.5104%;
+        display: block;
+    }
+    .title .maintitle { /*건강한 피부는 서두르지 않습니다*/
+        font-size: 50px; line-height: 60px;
+        color: #fffef3; font-weight: 400;
+        margin: 0 0 35px 6.5104%;
+    }
+    .title p { /* 모든 이솝 제품은 ~ 전달합니다 */
+        display: block;
+        color: #fffef3;
+        font-weight: 400;
+        font-size: 20px; line-height: 26px;
+        margin-left: 6.5104%;
+
+        opacity: 0;
+    }
+    .title p.animate {
+        opacity: 1;
+        transform:translateY(15px);
+    }
+    .title .tabletText {
+        display: block;
+    }
+    .title .pc_mainVisualText {
+        display: none;
+    }
+
+    
+
+
+/* main */
+/* 베스트 */
+
+/* 아로마틱 핸드 밤 */
+#best {
+    background: #fffef3; 
+    width: 100%; height: 644px;
+}
+.bestInner h3 { /*BEST*/
+    color: #333333;
+    font-family: 'suisse_intlregular';
+    font-size: 45px; text-align: center;
+    padding: 35px 0 40px 0;
+    font-weight: 400;
+}
+.bestInner .slide div { /* 베스트섹션 슬라이더 항목 */
+    /* float: left; */
+    /* width: 1650px; */
+    margin: 0 auto;
+}
+.bestInner .balmBox {
+    width:324px; height: 323px;
+    display: block; 
+    /* background: pink; */
+}
+.bestInner .balmBox img { /*핸드밤 이미지*/
+    width: 272px;
+    /* height: 323px; */
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+.bestInner .slide div:first-child h4 { /*레저렉션 아로마틱 핸드 밤*/
+    color: #333333;
+    font-size: 22px; font-weight: 500;
+    /* margin: 0 0 14px 11.8489%; */
+    text-align: center;
+    margin-top: 24px;
+}
+.bestInner .slide div:first-child p { /*핸드밤 상세*/
+    color: #333333;
+    font-weight: 300; font-size: 18px;
+    line-height: 22px;text-align: center;
+    /* margin-left: 16.1458%; */
+    margin-top: 14px;
+}
+
+/* 아로마틱 핸드 워시 */
+.bestInner .slide div:nth-child(2) {
+    display: block;
+}
+.bestInner .washBox {
+    width:324px; height: 323px;
+    display: block; 
+    /* background: skyblue; */
+    margin: 0 auto;
+}
+.bestInner .washBox img { /* 핸드워시 이미지 */
+    width: 260px;
+    /* height: 322px; */
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+.bestInner .slide div:nth-child(2) h4 { /* 레저렉션 아로마틱 핸드 워시 */
+    color: #333333;
+    font-size: 22px; font-weight: 500;
+    text-align: center;
+    margin: 24px 0 14px;
+}
+.bestInner .slide div:nth-child(2) p { /* 핸드워시 상세 */
+    color: #333333;
+    font-weight: 300; font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+}
+
+/* 테싯 오 드 퍼퓸 */
+.bestInner .perfumeBox {
+    width:324px; height: 323px;
+    display: block; 
+    /* background: pink; */
+}
+.bestInner .perfumeBox img { /* 퍼퓸 이미지 */
+    width: 329px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+.bestInner .slide div:nth-child(3) h4 { /* 테싯 오 드 퍼퓸 */
+    font-size: 22px; 
+    margin-top: 24px;
+}
+.bestInner .slide div:nth-child(3) p { /* 퍼퓸 상세 */
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 14px;
+}
+
+/* 올루스 아로마틱 룸 스프레이 */
+.bestInner .roomBox {
+    width:324px; height: 323px;
+    display: block; 
+    /* background: pink; */
+    margin: 0 auto;
+}
+.bestInner .roomBox img { /*스프레이 이미지*/
+    width: 279px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+.bestInner .slide div:nth-child(3) h4 { /* 올루스 아로마틱 룸 스프레이 */
+    font-size: 22px;
+    margin-top: 24px;
+}
+.bestInner .slide div:nth-child(3) p { /* 스프레이 상세 */
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 14px;
+}
+
+#best .slick-dots { /* 슬라이드바 */
+    min-width: 53%;
+    width: 53%;
+    margin-top: 50px;
+}
+#best .slick-dots .slick-active {
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: #000;
+}
+#best .slick-dots li {
+    float: left;
+    width: 50%;
+}
+
+
+/* 브랜드스토리 */
+.brandInner .brandLeft { /* 브랜드스토리 bg */
+    background: url(../images/aesop_tablet_brandstory_bg.jpg) no-repeat center/cover; 
+    width: 100%; 
+    padding-bottom: 56.3802%;
+    padding-top: 0;
+    /* background-position: center bottom; */
+}
+.brandInner .title h3 { /*BRAND STORY*/
+    font-family: 'suisse_intlregular';
+    color: #fffef3;
+    font-size: 35px; font-weight: 400;
+    margin: 0 0 30px 6.5104%;
+    padding-top: 35px;
+}
+.brandInner .none { /*이솝은 ~ 제공합니다*/
+    font-size: 20px; line-height: 26px;
+    margin: 0 0 60px 6.5104%;
+}
+.brandInner .tabletText { /* 줄바꿈 */
+    display: block;
+}
+.brandInner a { /* 브랜드 자세히보기 */
+    border: 1px solid #fffef3;
+    /* width: 172px; height: 48px; */
+    color: #fffef3;
+    margin-left: 6.5104%;
+    display: block; 
+    transition: all 0.4s ease;
+    width: 0; height: 0; opacity: 0;
+}
+.brandInner a.animate {
+    width: 172px; height: 48px;
+    opacity: 1;
+}
+.brandInner .brandBox span { /* BRAND */
+    font-family: 'suisse_intllight';
+    font-size: 16px; 
+    /* margin: 20px 60px; */
+    text-align: center;
+    line-height: 47px;
+    display: block;
+}
+
+.brandInner .brandVideo {
+    position: relative;
+    padding-bottom: 56.381%;
+    overflow: hidden;
+    margin-top: -1px;
+}
+
+.brandInner .brandVideo video {
+    /* width: 100%; */
+    /* padding-bottom: 56.380%; */
+    position: absolute;
+    /* height: 100%; */
+}
+
+
+/* 기프트 가이드 */
+.giftInner {
+    padding-top: 50px;
+}
+.giftInner .giftRight {
+    background: url(../images/Aesop_A_Guide_to_Caring_for_Oily_Skin_Web_Secondary_Mid_01_Desktop_2560x1440px.jpeg) no-repeat center/cover;
+    width: 100%; 
+    height: 0;
+    padding-bottom: 56.3802%;
+    /* padding-top: -15px; */
+    /* background-position: center bottom; */
+    margin-top: -15px;
+}
+.giftRight .title h3 { /* GIFT GUIDE */
+    font-family: 'suisse_intlregular';
+    color: #fffef3;
+    font-size: 35px; font-weight: 400;
+    margin: 0 6.5104% 30px 0;
+    text-align: right;
+    padding-top: 35px;
+}
+.giftRight p { /* 다양한 ~ 기프트 제안 */
+    font-weight: 400; color: #fffef3;
+    font-size: 20px; text-align: right;
+    margin: 0 6.5104% 60px 0;
+}
+.giftInner a { /* 기프트 자세히보기 */
+    border: 1px solid #fffef3;
+    color: #fffef3;
+    /* width: 173px; height: 48px; */
+    margin-right: 6.5104%;
+    display: block; 
+    float: right;
+    transition: all 0.4s ease; 
+    width: 0; height: 0; opacity: 0;
+}
+.giftInner a.animate {
+    width: 173px; height: 48px; opacity: 1;
+}
+.giftInner .giftBox span { /* GIFT */
+    font-family: 'suisse_intllight';
+    text-align: center;
+    font-size: 16px; 
+    line-height: 47px;
+     display: block;
+}
+.giftInner .giftVideo video {
+   display: none;
+}
+.giftInner .tablet_giftVideo video   {
+    width: 100%;
+    display: block;
+}
+
+
+
+/* 스토어 로케이터 */
+.storeInner {
+    padding-top: 50px;
+}
+.storeInner .storeLeft { /* 스토어 로케이터 bg */
+    background: url(../images/aesop_tablet_store_bg.jpg) no-repeat center/cover; 
+    width: 100%; 
+    /* height: 375px;  */
+    height: 0;
+    padding-bottom: 56.3802%;
+    padding-top: 0;
+    /* background-position: center bottom; */
+    margin-top: -15px;
+}
+.storeInner .title h3 { /*STORE LOCATOR*/
+    font-size: 35px; font-weight: 400;
+    margin: 0 0 30px 6.5104%;
+    padding-top: 35px;
+}
+.storeInner .none { /*매장에서는 ~ 제공해드립니다*/
+    font-size: 20px; line-height: 26px;
+    margin: 0 0 60px 6.5104%;
+}
+.storeInner p .tabletText { /* 줄바꿈 */
+    display: block;
+}
+.storeInner p .mobileText:nth-child(2) { /* 줄바꿈 */
+    display: inline;
+}
+.storeInner a { /* 스토어 자세히보기 */
+    /* width: 173px; height: 48px; */
+    margin-left: 6.5104%;
+    width: 0; height: 0; opacity: 0;
+}
+.storeInner a.animate {
+    width: 173px; height: 48px; opacity: 1;
+}
+.storeInner .storeBox span { /* STORE */
+    font-size: 16px; 
+    line-height: 47px;
+}
+
+.storeInner .storeVideo {
+    position: relative;
+    padding-bottom: 56.381%;
+    overflow: hidden;
+}
+.storeInner .storeVideo video {
+    /* width: 100%; */
+    position: absolute;
+}
+
+
+
+
+
+
+
+
+
+/* 격언 */
+#wisely .wiselyInner {
+    height: 343px;
+    margin-top: -15px;
+}
+.wiselyInner h3 { /* wisely ~ fast */
+    font-size: 30px;
+    padding-top: 108px;
+}
+.wiselyInner p { /* william shakespeare */
+    font-size: 18px;
+    margin-top: 24px;
+}
+.wiselyInner h3 .mobileText {
+    display: inline;
+}
+
+
+
+
+/* footer */
+.footer {
+    padding-bottom: 50px;
+}
+.footer .footerInner {
+    width: 90%;
+    /* display: flex; justify-content: space-around; flex-wrap: nowrap; */
+    font-size: 16px;
+}
+.footerInner a {
+    font-size: 16px; 
+    line-height: 26px;
+    font-weight: 400;
+}
+.footerInner h2 {
+    font-size: 18px;
+    padding-bottom: 15px;
+}
+.footerInner .mobileFooter {
+    padding-top: 50px;
+
+}
+.footerInner .aesopWrap {
+    float: left;
+    width: 33.333%;
+}
+.footerInner .socialWrap {
+    float: left;
+    width: 33.333%;
+}
+.footerInner .orderWrap {
+    float: left;
+    width: 33.333%;
+}
+.footerInner .markWrap { /* 이솝 마크 */
+    text-align: center;
+    display: block;
+    margin-top: 65px;
+    opacity: 1;
+}
+
+
+/* /////    @media tablet768      */
+
+}
+
+
+
+
+@media screen and (min-width: 1024px) {
+
+
+/* header */
+
+    /* 메뉴 */
+    .navBtn { /* 햄버거 */
+       display: none;
+    }
+    .navBtn:after {
+        display: none;
+    }
+
+     #menu .tablet_cartLogin li:last-child a { /* 로그인 */
+        padding: 0;
+        margin-top: 0;
+    }
+    #menu .tablet_cartLogin li:first-child  { /* 돋보기 아이콘 */
+        display: block;
+        background: url(../images/premium-icon-magnifier-2319177.png) no-repeat center/contain;
+        width: 23px;
+        height: 23px;
+    } 
+    #menu .tablet_cartLogin {
+        display: block;
+        float: right;
+        margin-top: 5px;
+        margin-left: 1.953%;
+        margin-right: 3.912%;
+    }
+    #menu .tablet_cartLogin li {
+        float: left;
+    }
+  
+
+
+
+    /* gnb.open   ->   gnb     */
+
+.gnb {
+    display: block;
+}
+.navWrap .gnb {
+    opacity: 1;
+    top: 0;
+    width: 100%; 
+    background: none;
+    height: 0;
+}
+.gnb .searchWrap .searchIcon { /* 돋보기 아이콘 */
+    display: none;
+}
+.gnb ul>li>a { /* 브랜드 ~ 카트 */
+    font-size: 20px;
+    font-weight: 300;
+    padding: 0;
+    display: block;
+}
+.gnb ul>li {
+    opacity: 1;
+    visibility: visible;
+    float: left;
+    margin: 28px 1.953% 0 3.912%;
+}
+.gnb ul>li:nth-child(2),
+.gnb ul>li:nth-child(3) { /* 기프트, 스토어 */
+    margin-left: 0;
+}
+
+ 
+.gnb ul>li:nth-child(3)>a { /* 스토어 */
+    margin-bottom: 0;
+    
+}
+.gnb .cartLogin {
+    display: none;
+}
+
+
+
+    /* 비쥬얼 */
+
+.visual .mainVisual .bg { /* 메인비주얼 bg */
+    background: url(../images/aesop_1024_mainvisual_bg.jpg)no-repeat center/cover;
+    width: 100%; 
+    /* height: 271px; */
+    /* height: 0; */
+    padding-bottom: 51.66%;
+    /* margin-top: -1px; */
+    /* background-position: center bottom; */
+}
+.title .mainTitle {  /*시간의 가치*/
+    font-size: 26px; font-weight: 300;
+    padding: 65px 0 5px 6.836%;
+    display: block;
+}
+.title .maintitle { /*건강한 피부는 서두르지 않습니다*/
+    font-size: 65px; line-height: 72px;
+    margin: 0 0 45px 6.836%;
+}
+.title p { /* 모든 이솝 제품은 ~ 전달합니다 */
+    font-size: 24px; line-height: 30px;
+    margin-left: 6.836%;
+}
+.title .tabletText {
+    display: block;
+}
+.title .pc_mainVisualText {
+    display: none;
+}
+
+
+
+
+/* main */
+/* 베스트 */
+
+/* 아로마틱 핸드 밤 */
+#best {
+    background: #fffef3; 
+    width: 100%; height: 637px;
+}
+.bestInner h3 { /*BEST*/
+    font-size: 50px;
+    padding: 45px 0 40px 0;
+}
+
+.bestInner .balmBox {
+    width:280px; height: 279px;
+    display: block; 
+    /* background: pink; */
+}
+.bestInner .balmBox img { /*핸드밤 이미지*/
+    width: 235px;
+    /* height: 323px; */
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+.bestInner .slide div:first-child h4 { /*레저렉션 아로마틱 핸드 밤*/
+    color: #333333;
+    font-size: 22px; font-weight: 500;
+    /* margin: 0 0 14px 11.8489%; */
+    text-align: center;
+    margin-top: 24px;
+}
+.bestInner .slide div:first-child p { /*핸드밤 상세*/
+    color: #333333;
+    font-weight: 300; font-size: 18px;
+    line-height: 22px;text-align: center;
+    /* margin-left: 16.1458%; */
+    margin-top: 14px;
+}
+
+/* 아로마틱 핸드 워시 */
+.bestInner .washBox {
+    width:280px; height: 279px;
+    display: block; 
+    /* background: skyblue; */
+}
+.bestInner .washBox img { /* 핸드워시 이미지 */
+    width: 226px;
+    /* height: 322px; */
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+.bestInner .slide div:nth-child(2) h4 { /* 레저렉션 아로마틱 핸드 워시 */
+    color: #333333;
+    font-size: 22px; font-weight: 500;
+    text-align: center;
+    margin: 24px 0 14px;
+}
+.bestInner .slide div:nth-child(2) p { /* 핸드워시 상세 */
+    color: #333333;
+    font-weight: 300; font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+}
+
+/* 테싯 오 드 퍼퓸 */
+.bestInner .perfumeBox {
+    width:280px; height: 279px;
+    display: block; 
+    /* background: pink; */
+}
+.bestInner .perfumeBox img { /* 퍼퓸 이미지 */
+    width: 285px;
+    /* height: 323px; */
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+
+/* 올루스 아로마틱 룸 스프레이 */
+.bestInner .roomBox {
+    width:280px; height: 279px;
+    display: block; 
+    /* background: pink; */
+}
+.bestInner .roomBox img { /*핸드밤 이미지*/
+    width: 235px;
+    /* height: 323px; */
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+#best .slick-dots { /* 슬라이드바 */
+    min-width: 39.74%;
+    width: 39.74%;
+    margin-top: 60px;
+}
+#best .slick-dots .slick-active {
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: #000;
+}
+#best .slick-dots li {
+    float: left;
+    width: 50%;
+}
+
+
+
+
+
+/* 브랜드스토리 */
+.brandInner .brandLeft { /* 브랜드스토리 bg */
+    background: url(../images/aesop_brandstory_bg.jpg) no-repeat center/cover; 
+    width: 50%; 
+    padding-bottom: 50%;
+    padding-top: 0;
+    /* background-position: center bottom; */
+    float: left;
+    transform: translateX(-400px);
+}
+.brandInner .title h3 { /*BRAND STORY*/
+    font-family: 'suisse_intlregular';
+    color: #fffef3;
+    font-size: 40px; font-weight: 400;
+    margin: 0 0 30px 6.5104%;
+    padding-top: 45px;
+}
+.brandInner .none { /*이솝은 ~ 제공합니다*/
+    font-size: 20px; line-height: 26px;
+    margin: 0 0 50px 6.5104%;
+}
+.brandInner .tabletText { /* 줄바꿈 */
+    display: block;
+}
+.brandInner a { /* 브랜드 자세히보기 */
+    /* width: 173px; height: 48px; */
+    margin-left: 6.836%;
+    width: 0; height: 0; opacity: 0;
+}
+.brandInner a.animate {
+    width: 173px; height: 48px; opacity: 1;
+}
+.brandInner .brandBox span { /* BRAND */
+    font-size: 18px; 
+    line-height: 47px;
+}
+.brandInner .brandVideo {
+    position: unset;
+    width: 50%;
+    padding-bottom: 0%;
+    overflow: unset;
+    margin-top: 0;
+    float: left;
+}
+
+.brandInner .brandVideo video {
+    /* width: 100%; */
+    padding-bottom: 0%;
+    position: unset;
+    /* height: 100%; */
+    transform: translateX(400px);
+}
+
+
+
+
+
+/* 기프트 가이드 */
+.giftInner {
+    padding-top: 60px;
+    clear: both;
+}
+.giftInner .giftRight {
+    background: url(../images/aesop_giftguide_bg.jpg) no-repeat center/cover;
+    width: 50%; 
+    height: 0;
+    padding-bottom: 50%;
+    padding-top: 0;
+    float: right;
+    transform: translateX(400px);
+}
+.giftRight .title h3 { /* GIFT GUIDE */
+    font-size: 40px; font-weight: 400;
+    margin: 0 6.836% 30px 0;
+    text-align: right;
+    padding-top: 45px;
+}
+.giftRight p { /* 다양한 ~ 기프트 제안 */
+    font-weight: 400; color: #fffef3;
+    font-size: 20px; text-align: right;
+    margin: 0 6.5104% 50px 0;
+}
+.giftInner a { /* 기프트 자세히보기 */
+    /* width: 173px; height: 48px; */
+    margin-right: 6.836%;
+    float: right;
+    width: 0; height: 48px; opacity: 0;
+}
+.giftInner a.animate {
+    width: 173px; height: 48px; opacity: 1;
+}
+.giftInner .giftBox span { /* GIFT */
+    font-size: 18px; 
+    line-height: 47px;
+}
+.giftInner .giftVideo video {
+   display: block;
+   width: 50%;
+   padding-bottom: 0%;
+   float: right;
+   margin-top: -15px;
+   transform: translateX(-400px);
+}
+.giftInner .tablet_giftVideo video   {
+    width: 100%;
+    display: none;
+}
+
+
+
+/* 스토어 로케이터 */
+.storeInner {
+    padding-top: 60px;
+    clear: both;
+}
+.storeInner .storeLeft { /* 스토어 로케이터 bg */
+    background: url(../images/aesop_mobile_storelocator_bg.jpg) no-repeat center/cover; 
+    width: 50%; 
+    padding-bottom: 50%;
+    padding-top: 0;
+    float: left;
+    transform: translateX(-400px);
+}
+.storeInner .title h3 { /*STORE LOCATOR*/
+    font-size: 40px;
+    margin: 0 0 30px 6.836%;
+    padding-top: 45px;
+}
+.storeInner .none { /*매장에서는 ~ 제공해드립니다*/
+    font-size: 20px; line-height: 26px;
+    margin: 0 0 50px 6.836%;
+}
+.storeInner p .tabletText { /* 줄바꿈 */
+    display: block;
+}
+.storeInner p .mobileText:nth-child(2) { /* 줄바꿈 */
+    display: block;
+}
+.storeInner a { /* 스토어 자세히보기 */
+    /* width: 173px; height: 48px; */
+    margin-left: 6.836%;
+    width: 0; height: 0;
+}
+.storeInner a.animate {
+    opacity: 1; width: 173px; height: 48px;
+}
+.storeInner .storeBox span { /* STORE */
+    font-size: 18px; 
+    line-height: 47px;
+}
+
+.storeInner .storeVideo {
+    position: unset;
+    padding-bottom: 0;
+    overflow: hidden;
+    margin-top: 0px;
+}
+.storeInner .storeVideo video {
+    width: 100%;
+    position: unset;
+    transform: translateX(400px);
+}
+.storeInner .storeVideo video.animate {
+    transform: translateX(0);
+}
+
+
+
+
+
+/* 격언 */
+#wisely .wiselyInner {
+    clear: both;
+    height: 363px;
+    text-align: center;
+    padding:0;
+    margin-top: -15px;
+}
+.wiselyInner h3 { /* wisely ~ fast */
+    font-size: 40px;
+    padding-top: 148px;
+}
+.wiselyInner p { /* william shakespeare */
+    font-size: 20px;
+    margin-top: 24px;
+}
+.wiselyInner h3 .mobileText {
+    display: inline;
+}
+
+
+
+
+/* footer */
+.footer {
+    padding-bottom: 60px;
+}
+.footer .footerInner {
+    width: 90%;
+    font-size: 16px;
+}
+.footer .sustainWrap {
+    padding-top: 60px;
+}
+.footer .pc {
+    display: block;
+    float: left;
+    width: 50%;
+}
+.footer .pc h2 { /* 지속가능성 */
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fffef3;
+    /* padding: 0 0 25px 6.836%; */
+    padding-bottom: 25px;
+}
+.footer .pc p { /* 이솝은 ~ 브랜드입니다. */
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #d4c9be;
+    /* padding-left: 6.836%; */
+    opacity: 0;
+}
+.footer .pc p.animate {
+    opacity: 1;
+    transform: translateY(15px);
+}
+.footerInner .mobileFooter {
+    float: right;
+    width: 50%;
+}
+
+.footerInner a {
+    font-size: 16px; 
+    line-height: 26px;
+    font-weight: 400;
+}
+.footerInner h2 {
+    font-size: 18px;
+    padding-bottom: 25px;
+    font-weight: normal;
+}
+.footerInner .mobileFooter {
+    padding-top: 0;
+
+}
+.footerInner .aesopWrap {
+    float: left;
+    width: 33.333%;
+    text-align: left;
+}
+.footerInner .socialWrap {
+    float: left;
+    width: 33.333%;
+    text-align: left;
+}
+.footerInner .orderWrap {
+    float: left;
+    width: 33.333%;
+    text-align: left;
+}
+.footerInner .markWrap { /* 이솝 마크 */
+    float: right;
+    text-align: left;
+    /* display: block; */
+    /* margin: 112px 0 60px 6.836%; */
+    /* margin: 112px 0 0 6.836%; */
+    margin:112px 0 0 0;
+    /* padding:0; */
+    width: 50%;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (min-width:1650px) {
+    
+
+
+/* header */
+
+
+    /* 메뉴 */
+    
+    .navWrap .logo {
+        width: 150px;
+        height: 76px;
+        margin-top: -7px;
+    }
+     #menu .tablet_cartLogin li a { /* 카트 로그인 */
+         font-size: 22px;
+     }
+     #menu .tablet_cartLogin li:last-child a { /* 로그인 */
+         padding: 0;
+         margin-top: 0;
+     }
+     #menu .tablet_cartLogin li:first-child  { /* 돋보기 아이콘 */
+         width: 25px;
+         height: 25px;
+     } 
+     #menu .tablet_cartLogin { /* 카트 로그인 */
+         display: block;
+         float: right;
+         margin-top: 4px;
+         margin-left: 0%;
+         margin-right: 50px;
+     }
+     #menu .tablet_cartLogin li {
+         float: left;
+     }
+
+
+
+
+
+     /* gnb.open   ->   gnb     */
+
+.gnb {
+    display: block;
+}
+.navWrap .gnb {
+    top: 0;
+    width: 100%; 
+    background: none;
+    height: 0;
+}
+.gnb ul>li>a { /* 브랜드 ~ 카트 */
+    font-size: 22px;
+    font-weight: 300;
+    padding: 0;
+    display: block;
+}
+.gnb ul>li {
+    float: left;
+    margin: 25px 50px 0 50px;
+}
+.gnb ul>li:nth-child(2),
+.gnb ul>li:nth-child(3) { /* 기프트, 스토어 */
+    margin-left: 0;
+}
+
+ 
+.gnb ul>li:nth-child(3)>a { /* 스토어 */
+    margin-bottom: 0;
+    
+}
+.gnb .cartLogin {
+    display: none;
+}
+
+
+
+
+    /* 비쥬얼 */
+
+    .visual .mainVisual .bg { /* 메인비주얼 bg */
+        background: url(../images/aesop_pc_mainvisual_bg.jpg)no-repeat center/cover;
+        width: 100%; 
+        /* height: 271px; */
+        /* height: 0; */
+        padding-bottom: 44.843%;
+        /* margin-top: -1px; */
+        /* background-position: center bottom; */
+    }
+    .title .mainTitle {  /*시간의 가치*/
+        font-size: 32px;
+        padding: 120px 0 0px 7.8125%;
+    }
+    .title .maintitle { /*건강한 피부는 서두르지 않습니다*/
+        font-size: 85px; line-height: 95px;
+        margin: 0 0 40px 7.8125%;
+    }
+    .title p { /* 모든 이솝 제품은 ~ 전달합니다 */
+        font-size: 28px; line-height: 38px;
+        margin-left: 7.8125%;
+    }
+    .title .pc_none {
+        display: none;
+    }
+    .title .pc_mainVisualText {
+        display: block;
+    }
+    .title .pc_mainVisualText .pcText {
+        display: block;
+    }
+
+
+
+
+
+    /* main */
+    /* 베스트 */
+
+/* 아로마틱 핸드 밤 */
+#best {
+    background: #fffef3; 
+    width: 100%; height: 837px;
+}
+.bestInner h3 { /*BEST*/
+    font-size: 65px;
+    padding: 60px 0 65px 0;
+}
+.bestInner .balmBox {
+    width:382px; height: 383px;
+    display: block; 
+    /* background: pink; */
+}
+.bestInner .balmBox img { /*핸드밤 이미지*/
+    width: 322px;
+    /* height: 323px; */
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+.bestInner .slide div:first-child h4 { /*레저렉션 아로마틱 핸드 밤*/
+    color: #333333;
+    font-size: 26px; font-weight: 500;
+    /* margin: 0 0 14px 11.8489%; */
+    text-align: center;
+    margin-top: 36px;
+}
+.bestInner .slide div:first-child p { /*핸드밤 상세*/
+    color: #333333;
+    font-weight: 300; font-size: 20px;
+    line-height: 22px;text-align: center;
+    /* margin-left: 16.1458%; */
+    margin-top: 15px;
+}
+.bestInner .slide div:first-child p .bestText { /*줄바꿈*/
+    display: inline;
+}
+
+/* 아로마틱 핸드 워시 */
+.bestInner .slide div:nth-child(2) {
+    display: block;
+}
+.bestInner .washBox {
+    width:382px; height: 383px;
+    display: block; 
+    /* background: skyblue; */
+    margin: 0 auto;
+}
+.bestInner .washBox img { /* 핸드워시 이미지 */
+    width: 310px;
+    /* height: 322px; */
+    display: block;
+}
+.bestInner .slide div:nth-child(2) h4 { /* 레저렉션 아로마틱 핸드 워시 */
+    font-size: 26px; font-weight: 500;
+    text-align: center;
+    margin-top: 36px;
+}
+.bestInner .slide div:nth-child(2) p { /* 핸드워시 상세 */
+    font-weight: 300; font-size: 20px;
+    line-height: 22px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* 테싯 오 드 퍼퓸 */
+.bestInner .perfumeBox {
+    width:382px; height: 383px;
+    display: block; 
+    /* background: pink; */
+}
+.bestInner .perfumeBox img { /* 퍼퓸 이미지 */
+    width: 391px;
+    /* height: 323px; */
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+.bestInner .slide div:nth-child(3) h4 { /* 테싯 오 드 퍼퓸 */
+    font-size: 26px; 
+    margin-top: 36px;
+}
+.bestInner .slide div:nth-child(3) p { /* 퍼퓸 상세 */
+    font-size: 20px;
+    line-height: 22px;
+    margin-top: 15px;
+}
+
+
+/* 올루스 아로마틱 룸 스프레이 */
+.bestInner .roomBox {
+    width:382px; height: 383px;
+    display: block; 
+    /* background: pink; */
+}
+.bestInner .roomBox img { /*핸드밤 이미지*/
+    width: 332px;
+    /* height: 323px; */
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+.bestInner .slide div:nth-child(3) h4 { /* 올루스 아로마틱 룸 스프레이 */
+    font-size: 26px;
+    margin-top: 36px;
+}
+.bestInner .slide div:nth-child(3) p { /* 스프레이 상세 */
+    font-size: 20px;
+    line-height: 22px;
+    margin-top: 15px;
+}
+
+#best .slick-dots { /* 슬라이드바 */
+    min-width: 647px;
+    width: 647px;
+    margin-top: 95px;
+    display: none;
+}
+
+
+
+
+/* 브랜드스토리 */
+.brandInner .title h3 { /*BRAND STORY*/
+    font-family: 'suisse_intlregular';
+    color: #fffef3;
+    font-size: 55px; font-weight: 400;
+    margin: 0 0 45px 9.26%;
+    padding-top: 135px;
+}
+.brandInner .none {
+    display: none;
+}
+.brandInner .pc_brandstoryText { /*이솝은 ~ 제공합니다*/
+    display: block;
+    color: #fffef3;
+    font-weight: normal;
+    font-size: 24px; line-height: 34px;
+    margin: 0 0 80px 9.26%;
+    opacity: 0;
+}
+.brandInner .pc_brandstoryText.animate {
+    opacity: 1;
+    transform: translateY(15px);
+}
+.brandInner .brandstoryText { /* 줄바꿈 */
+    display: block;
+}
+.brandInner a { /* 브랜드 자세히보기 */
+    /* width: 275px; height: 76px; */
+    margin-left: 9.26%;
+    width: 0; height: 0; opacity: 0;
+}
+.brandInner a.animate {
+    width: 275px; height: 76px; opacity: 1;
+}
+.brandInner .brandBox span { /* BRAND */
+    font-size: 20px; 
+    line-height: 77px;
+}
+.brandInner .brandVideo {
+    position: unset;
+    width: 50%;
+    padding-bottom: 0%;
+    overflow: unset;
+    margin-top: 0;
+    float: left;
+}
+
+.brandInner .brandVideo video {
+    /* width: 100%; */
+    padding-bottom: 0%;
+    position: unset;
+    /* height: 100%; */
+}
+
+
+
+
+/* 기프트 가이드 */
+.giftInner {
+    padding-top: 75px;
+}
+.giftInner .giftRight {
+    background: url(../images/aesop_giftguide_bg.jpg) no-repeat center/cover;
+    width: 50%; 
+    height: 0;
+    padding-bottom: 50%;
+    padding-top: 0;
+    float: right;
+}
+.giftRight .title h3 { /* GIFT GUIDE */
+    font-size: 55px;
+    margin: 0 9.26% 45px 0;
+    padding-top: 135px;
+}
+.giftRight p { /* 다양한 ~ 기프트 제안 */
+    font-size: 24px;
+    margin: 0 9.26% 80px 0;
+}
+.giftInner a { /* 기프트 자세히보기 */
+    /* width: 275px; height: 76px; */
+    margin-right: 9.26%;
+    width: 0; height: 0; opacity: 0;
+}
+.giftInner a.animate {
+    width: 275px; height: 76px; opacity: 1;
+}
+.giftInner .giftBox span { /* GIFT */
+    font-size: 20px; 
+    line-height: 77px;
+}
+
+
+
+
+/* 스토어 로케이터 */
+.storeInner {
+    padding-top: 75px;
+}
+.storeInner .title h3 { /*STORE LOCATOR*/
+    font-size: 55px;
+    margin: 0 0 45px 9.26%;
+    padding-top: 135px;
+}
+.storeInner .pcText { /*매장에서는 ~ 제공해드립니다*/
+    font-size: 24px; line-height: 34px;
+    margin: 0 0 80px 9.26%;
+    color: #fffef3;
+    font-weight: normal;
+    opacity: 0;
+}
+.storeInner .pcText.animate {
+    opacity: 1;
+    transform: translateY(15px);
+}
+.storeInner .none { 
+    display: none;
+}
+.storeInner .pcText {
+    display: block;
+}
+.storeInner p .pc_text { /* 줄바꿈 */
+    display: block;
+}
+.storeInner a { /* 스토어 자세히보기 */
+    /* width: 275px; height: 76px; */
+    margin-left: 9.26%;
+    width: 0; height: 0; opacity: 0;
+}
+.storeInner a.animate {
+    width: 275px; height: 76px; opacity: 1;
+}
+.storeInner .storeBox span { /* STORE */
+    font-size: 20px; 
+    line-height: 77px;
+}
+
+
+
+
+
+/* 격언 */
+#wisely .wiselyInner {
+    height: 641px;
+    margin-top: -16px;
+}
+.wiselyInner h3 { /* wisely ~ fast */
+    font-size: 55px;
+    padding-top: 299px;
+}
+.wiselyInner p { /* william shakespeare */
+    font-size: 24px;
+    margin-top: 47px;
+}
+
+
+
+
+/* footer */
+.footer {
+    padding-bottom: 75px;
+}
+.footer .footerInner {
+    width: 90%;
+    font-size: 18px;
+}
+.footer .sustainWrap {
+    padding-top: 75px;
+}
+.footer .pc {
+    display: block;
+    float: left;
+    width: 50%;
+}
+.footer .pc h2 { /* 지속가능성 */
+    font-size: 18px;
+    font-weight: 400;
+    color: #fffef3;
+    /* padding: 0 0 25px 6.836%; */
+}
+.footer .pc p { /* 이솝은 ~ 브랜드입니다. */
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #d4c9be;
+    /* padding-left: 6.836%; */
+}
+.footerInner .mobileFooter {
+    float: right;
+    width: 50%;
+}
+
+.footerInner h2 {
+    padding-bottom: 36px;
+}
+/* .footerInner .mobileFooter {
+    padding-top: 0;
+} */
+.footerInner .aesopWrap {
+    float: left;
+    width: 33.333%;
+    text-align: left;
+}
+.footerInner .socialWrap {
+    float: left;
+    width: 33.333%;
+    text-align: left;
+}
+.footerInner .orderWrap {
+    float: left;
+    width: 33.333%;
+    text-align: left;
+}
+.footerInner .markWrap { /* 이솝 마크 */
+    margin:125px 0 0 0;
+}
+.mobileFooter h2 {
+    margin-bottom: -15px;
+}
+
+
+
+
+    }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
